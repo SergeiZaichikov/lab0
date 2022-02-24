@@ -22,7 +22,7 @@ namespace Module1 {
 		~File();
 		std::map <std::wstring, int> Getmap();
 		void count_words();
-		void getWord();
+		std::string getWord();
 		int Getcount();
 	};
 }
