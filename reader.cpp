@@ -1,5 +1,5 @@
 ﻿#include "reader.h"
-
+#include "consts.h"
 #include <codecvt>
 
 namespace Module1 {
@@ -26,11 +26,11 @@ namespace Module1 {
 		word = L"";
 		getline(input, str);
 
-		while ((str[ptr] >= L"a" && str[ptr] <= L"z" ||
-			(str[ptr] >= L"A" && str[ptr] <= L"Z") ||
-			(str[ptr] >= L"0" && str[ptr] <= L"9") ||
-			(str[ptr] >= L"а" && str[ptr] <= L"я") ||
-			(str[ptr] >= L"А" && str[ptr] <= L"Я") && ptr <= str.length()) 
+		while ((str[ptr] >= Module4::START_LITTLE_ENGLISH && str[ptr] <= Module4::END_LITTLE_ENGLISH ||
+			(str[ptr] >= Module4::START_BIG_ENGLISH && str[ptr] <= Module4::END_BIG_ENGLISH) ||
+			(str[ptr] >= Module4::START_NUMBER && str[ptr] <= Module4::END_NUMBER) ||
+			(str[ptr] >= Module4::START_LITTLE_RUSSIAN && str[ptr] <= Module4::END_LITTLE_RUSSIAN) ||
+			(str[ptr] >= Module4::START_BIG_RUSSIAN && str[ptr] <= Module4::END_BIG_RUSSIAN) && ptr <= str.length())
 		{
 			word += str[ptr];
 			++ptr;
